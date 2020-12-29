@@ -1,6 +1,6 @@
 {
-    "name": "rinvex/laravel-subscriptions",
-    "description": "Rinvex Subscriptions is a flexible plans and subscription management system for Laravel, with the required tools to run your SAAS like services efficiently. It's simple architecture, accompanied by powerful underlying to afford solid platform for your business.",
+    "name": "wakjoko/laravel-subscriptions",
+    "description": "Fork of rinvex/laravel-subscriptions without dependency on users table. You can attach subscription into any model.",
     "type": "library",
     "keywords": [
         "plan",
@@ -12,30 +12,10 @@
         "subscription"
     ],
     "license": "MIT",
-    "homepage": "https://rinvex.com",
-    "support": {
-        "email": "help@rinvex.com",
-        "issues": "https://github.com/rinvex/laravel-subscriptions/issues",
-        "source": "https://github.com/rinvex/laravel-subscriptions",
-        "docs": "https://github.com/rinvex/laravel-subscriptions/blob/master/README.md"
-    },
-    "authors": [
-        {
-            "name": "Rinvex LLC",
-            "homepage": "https://rinvex.com",
-            "email": "help@rinvex.com"
-        },
-        {
-            "name": "Abdelrahman Omran",
-            "homepage": "https://omranic.com",
-            "email": "me@omranic.com",
-            "role": "Project Lead"
-        },
-        {
-            "name": "The Generous Laravel Community",
-            "homepage": "https://github.com/rinvex/laravel-subscriptions/contributors"
-        }
-    ],
+    "authors": [{
+        "name": "Wakjoko",
+        "email": "wakjoko@gmail.com"
+    }],
     "require": {
         "php": "^7.4.0",
         "illuminate/console": "^7.0.0",
@@ -56,12 +36,12 @@
             "database"
         ],
         "psr-4": {
-            "Rinvex\\Subscriptions\\": "src"
+            "Wakjoko\\Subscriptions\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Rinvex\\Subscriptions\\Tests\\": "tests"
+            "Wakjoko\\Subscriptions\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -75,7 +55,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Rinvex\\Subscriptions\\Providers\\SubscriptionsServiceProvider"
+                "Wakjoko\\Subscriptions\\Providers\\SubscriptionsServiceProvider"
             ]
         }
     },

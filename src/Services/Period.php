@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rinvex\Subscriptions\Services;
+namespace Wakjoko\Subscriptions\Services;
 
 use Carbon\Carbon;
 

@@ -14,9 +14,9 @@ class CreatePlanSubscriptionsTable extends Migration
      */
     public function up(): void
     {
-        Schema::create(config('rinvex.subscriptions.tables.plan_subscriptions'), function (Blueprint $table) {
+        Schema::create(config('wakjoko.subscriptions.tables.plan_subscriptions'), function (Blueprint $table) {
             $table->increments('id');
-            $table->morphs('user');
+            $table->morphs('subscribable');
             $table->integer('plan_id')->unsigned();
             $table->string('slug');
             $table->{$this->jsonable()}('name');
@@ -32,7 +32,7 @@ class CreatePlanSubscriptionsTable extends Migration
 
             // Indexes
             $table->unique('slug');
-            $table->foreign('plan_id')->references('id')->on(config('rinvex.subscriptions.tables.plans'))
+            $table->foreign('plan_id')->references('id')->on(config('wakjoko.subscriptions.tables.plans'))
                   ->onDelete('cascade')->onUpdate('cascade');
         });
     }
@@ -44,7 +44,7 @@ class CreatePlanSubscriptionsTable extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists(config('rinvex.subscriptions.tables.plan_subscriptions'));
+        Schema::dropIfExists(config('wakjoko.subscriptions.tables.plan_subscriptions'));
     }
 
     /**

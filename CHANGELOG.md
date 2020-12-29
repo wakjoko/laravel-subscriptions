@@ -126,6 +126,8 @@ This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 ## v0.0.1 - 2017-06-29
 - Tag first release
 
+[v5.0.1]: https://github.com/rinvex/laravel-subscriptions/compare/v5.0.0...v5.0.1
+[v5.0.0]: https://github.com/rinvex/laravel-subscriptions/compare/v4.1.0...v5.0.0
 [v4.1.0]: https://github.com/rinvex/laravel-subscriptions/compare/v4.0.6...v4.1.0
 [v4.0.6]: https://github.com/rinvex/laravel-subscriptions/compare/v4.0.5...v4.0.6
 [v4.0.5]: https://github.com/rinvex/laravel-subscriptions/compare/v4.0.4...v4.0.5

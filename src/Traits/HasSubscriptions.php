@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Rinvex\Subscriptions\Traits;
+namespace Wakjoko\Subscriptions\Traits;
 
-use Rinvex\Subscriptions\Models\Plan;
-use Rinvex\Subscriptions\Services\Period;
+use Wakjoko\Subscriptions\Models\Plan;
+use Wakjoko\Subscriptions\Services\Period;
 use Illuminate\Database\Eloquent\Collection;
-use Rinvex\Subscriptions\Models\PlanSubscription;
+use Wakjoko\Subscriptions\Models\PlanSubscription;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait HasSubscriptions
@@ -26,13 +26,13 @@ trait HasSubscriptions
     abstract public function morphMany($related, $name, $type = null, $id = null, $localKey = null);
 
     /**
-     * The user may have many subscriptions.
+     * The subscribable may have many subscriptions.
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function subscriptions(): MorphMany
     {
-        return $this->morphMany(config('rinvex.subscriptions.models.plan_subscription'), 'user');
+        return $this->morphMany(config('wakjoko.subscriptions.models.plan_subscription'), 'subscribable');
     }
 
     /**
@@ -50,7 +50,7 @@ trait HasSubscriptions
      *
      * @param string $subscriptionSlug
      *
-     * @return \Rinvex\Subscriptions\Models\PlanSubscription|null
+     * @return \Wakjoko\Subscriptions\Models\PlanSubscription|null
      */
     public function subscription(string $subscriptionSlug): ?PlanSubscription
     {
@@ -60,17 +60,17 @@ trait HasSubscriptions
     /**
      * Get subscribed plans.
      *
-     * @return \Rinvex\Subscriptions\Models\PlanSubscription|null
+     * @return \Wakjoko\Subscriptions\Models\PlanSubscription|null
      */
     public function subscribedPlans(): ?PlanSubscription
     {
         $planIds = $this->subscriptions->reject->inactive()->pluck('plan_id')->unique();
 
-        return app('rinvex.subscriptions.plan')->whereIn('id', $planIds)->get();
+        return app('wakjoko.subscriptions.plan')->whereIn('id', $planIds)->get();
     }
 
     /**
-     * Check if the user subscribed to the given plan.
+     * Check if the subscribable subscribed to the given plan.
      *
      * @param int $planId
      *
@@ -84,12 +84,12 @@ trait HasSubscriptions
     }
 
     /**
-     * Subscribe user to a new plan.
+     * Subscribe subscribable to a new plan.
      *
      * @param string                            $subscription
-     * @param \Rinvex\Subscriptions\Models\Plan $plan
+     * @param \Wakjoko\Subscriptions\Models\Plan $plan
      *
-     * @return \Rinvex\Subscriptions\Models\PlanSubscription
+     * @return \Wakjoko\Subscriptions\Models\PlanSubscription
      */
     public function newSubscription($subscription, Plan $plan): PlanSubscription
     {
