@@ -294,5 +294,3 @@ Refer to the [Changelog](CHANGELOG.md) for a full history of the project.
 ## License
 
 This software is released under [The MIT License (MIT)](LICENSE).
-
-(c) 2016-2021 Wakjoko LLC, Some rights reserved.

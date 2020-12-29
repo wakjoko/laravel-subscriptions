@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 
 
+## [v5.0.1] - 2020-12-25
+- Add support for PHP v8
+
+## [v5.0.0] - 2020-12-22
+- Upgrade to Laravel v8
+- Update validation rules
+
 ## [v4.1.0] - 2020-06-15
 - Update validation rules
 - Drop using rinvex/laravel-cacheable from core packages for more flexibility
